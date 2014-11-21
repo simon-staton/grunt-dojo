@@ -40,7 +40,8 @@ dojo: {
       // Optional: Base Path to pass at the command line
       // Takes precedence over other basePaths
       // Default: null
-      basePath: ''
+      basePath: '',
+      ignoreBuildError: null //Ignore build errors
     }
   },
   options: {
@@ -59,7 +60,8 @@ dojo: {
     // Optional: Base Path to pass at the command line
     // Takes precedence over other basePaths
     // Default: null
-    basePath: ''
+    basePath: '',
+    ignoreBuildError: null //Ignore build errors
   }
 }
 ```
