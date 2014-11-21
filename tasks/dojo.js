@@ -109,7 +109,15 @@ module.exports = function(grunt) {
        * @memberOf defaults
        * @default
        */
-      basePath: null
+      basePath: null,
+      /**
+       * Optional flag to ignore dojo build errors
+       * used to bypass current dojo build warnings
+       * @type {Boolean=}
+       * @memberOf defaults
+       * @default
+       */
+      ignoreBuildError: null,
     });
 
     grunt.log.subhead('Building Dojo...');
@@ -180,7 +188,7 @@ module.exports = function(grunt) {
       args: args,
       opts: opts
     }, function(err, result){
-      if(err){
+      if(err && !options.ignoreBuildError){
         grunt.log.error(err);
         return done(false);
       }
